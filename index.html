@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional NDA Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Professional NDA Generator</h1>
+            <p>Create legally sound Non-Disclosure Agreements in minutes</p>
+        </div>
+
+        <div class="content">
+            <div class="form-panel">
+                <h2 style="margin-bottom: 30px; color: #2c3e50;">Agreement Details</h2>
+                
+                <div class="form-group">
+                    <label for="ndaType">NDA Type</label>
+                    <select id="ndaType">
+                        <option value="mutual">Mutual NDA (Both parties share information)</option>
+                        <option value="unilateral">Unilateral NDA (One party shares information)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="party1Name">Disclosing Party Name</label>
+                    <input type="text" id="party1Name" placeholder="Company or individual name">
+                </div>
+
+                <div class="form-group">
+                    <label for="party1Address">Disclosing Party Address</label>
+                    <textarea id="party1Address" placeholder="Full business address"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="party2Name">Receiving Party Name</label>
+                    <input type="text" id="party2Name" placeholder="Company or individual name">
+                </div>
+
+                <div class="form-group">
+                    <label for="party2Address">Receiving Party Address</label>
+                    <textarea id="party2Address" placeholder="Full business address"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="effectiveDate">Effective Date</label>
+                    <input type="date" id="effectiveDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="duration">Agreement Duration (years)</label>
+                    <select id="duration">
+                        <option value="1">1 Year</option>
+                        <option value="2">2 Years</option>
+                        <option value="3" selected>3 Years</option>
+                        <option value="5">5 Years</option>
+                        <option value="indefinite">Indefinite</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="purpose">Purpose of Disclosure</label>
+                    <textarea id="purpose" placeholder="Describe the business purpose for sharing confidential information"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="governingLaw">Governing Law (State/Country)</label>
+                    <input type="text" id="governingLaw" placeholder="e.g., California, United States">
+                </div>
+
+                <h3 style="margin: 30px 0 20px 0; color: #2c3e50;">Additional Clauses</h3>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="nonSolicitation">
+                    <label for="nonSolicitation">Include Non-Solicitation Clause</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="returnClause" checked>
+                    <label for="returnClause">Include Return of Materials Clause</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="injunctiveRelief" checked>
+                    <label for="injunctiveRelief">Include Injunctive Relief Clause</label>
+                </div>
+            </div>
+
+            <div class="preview-panel">
+                <div id="ndaPreview" class="nda-preview">
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>Generating NDA...</p>
+                    </div>
+                    <div id="ndaContent">
+                        <!-- NDA content will be generated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn" onclick="generateNDA()">Generate NDA</button>
+            <button class="btn btn-secondary" onclick="downloadPDF()">Download PDF</button>
+            <button class="btn btn-secondary" onclick="copyToClipboard()">Copy Text</button>
+            <button class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
